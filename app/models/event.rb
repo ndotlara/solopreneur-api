@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+  belongs_to :users
+  has_many :comments
+
   validates_presence_of :event_name, :date, :time, :street_address, :city, :state, :zip_code, :description
   validates_length_of :zip_code, is: 5, too_short: 'zip code must be 5 digits'
   validates_length_of :state, is: 2, allow_blank: false
