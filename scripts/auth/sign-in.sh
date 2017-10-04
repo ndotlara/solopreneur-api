@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 API="${API_ORIGIN:-http://localhost:4741}"
@@ -9,7 +10,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'",
+      "password": "'"${PASSWORD}"'"
     }
   }'
 

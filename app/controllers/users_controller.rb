@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class UsersController < ProtectedController
   skip_before_action :authenticate, only: [:signup, :signin]
-  before_action :set_user, only: [:show, :update]
+  before_action :set_user, only: [:show, :update, :create]
 
   # POST '/sign-up'
   def signup
@@ -91,9 +91,18 @@ class UsersController < ProtectedController
 
   def set_user
     @user = User.find(params[:id])
+  end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :company, :title, :city, :state, :bio, :interests)
+    params.require(:user).permit(:first_name,
+                                 :last_name,
+                                 :company,
+                                 :title,
+                                 :city,
+                                 :state,
+                                 :bio,
+                                 :interests)
+  end
 
   private :user_creds, :pw_creds
 end
