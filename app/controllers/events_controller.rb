@@ -41,7 +41,7 @@ class EventsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share common setup or constraints between actio ns.
     def set_event
       @event = current_user.events.find(params[:id])
 

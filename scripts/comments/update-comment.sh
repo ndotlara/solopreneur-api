@@ -2,16 +2,16 @@
 
 API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/comments/"
-curl "${API}${URL_PATH}" \
+curl "${API}${URL_PATH}/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "comment": {
-      "comment_body": "'"${COMMENT_BODY}"'",
-      "user_id": "'"${USER_ID}"'",
-      "event_id": "'"${EVENT_ID}"'"
+      "user_id": "'"${USERID}"'",
+      "event_id": "'"${EVENTID}"'",
+      "comment_body": "'"${COMMENT}"'"
     }
   }'
 
