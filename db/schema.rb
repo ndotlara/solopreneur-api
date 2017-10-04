@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004022854) do
+ActiveRecord::Schema.define(version: 20171004035231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20171004022854) do
 
   create_table "events", force: :cascade do |t|
     t.string   "event_name",     null: false
-    t.date     "date",           null: false
-    t.time     "time",           null: false
+    t.string   "date",           null: false
+    t.string   "time",           null: false
     t.string   "street_address", null: false
     t.string   "city",           null: false
     t.string   "state",          null: false
