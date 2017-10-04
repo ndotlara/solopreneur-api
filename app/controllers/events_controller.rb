@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class EventsController < OpenReadController
+class EventsController < UsersController
   before_action :set_event, only: [:show, :update, :destroy]
 
   # GET /events
