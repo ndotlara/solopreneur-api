@@ -9,9 +9,9 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "comment": {
-      "comment_body": "'"${COMMENT_BODY}"'",
-      "user_id": "'"${USER_ID}"'",
-      "event_id": "'"${EVENT_ID}"'"
+      "user_id": "'"${USERID}"'",
+      "event_id": "'"${EVENTID}"'",
+      "comment_body": "'"${COMMENT}"'"
     }
   }'
 
