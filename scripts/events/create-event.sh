@@ -9,14 +9,14 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "event": {
-      "event_name": "'"${EVENT_NAME}"'",
+      "event_name": "'"${NAME}"'",
       "date": "'"${DATE}"'",
       "time": "'"${TIME}"'",
-      "street_address": "'"${STREET_ADDRESS}"'",
+      "street_address": "'"${STADDRS}"'",
       "city": "'"${CITY}"'",
       "state": "'"${STATE}"'",
-      "zip_code": "'"${ZIP_CODE}"'",
-      "description": "'"${DESCRIPTION}"'"
+      "zip_code": "'"${ZIP}"'",
+      "description": "'"${DESC}"'"
     }
   }'
 
