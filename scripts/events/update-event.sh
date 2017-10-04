@@ -8,7 +8,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=${TOKEN}" \
   --header "Content-Type: application/json" \
   --data '{
-    "event": {
+    "events": {
       "event_name": "'"${EVENT_NAME}"'",
       "date": "'"${DATE}"'",
       "time": "'"${TIME}"'",
