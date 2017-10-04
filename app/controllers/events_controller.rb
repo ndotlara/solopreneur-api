@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class EventsController < OpenReadController
-  before_action :set_event, only: [:show, :update, :destroy]
+  before_action :set_event, only: [:update, :destroy]
 
   # GET /events
   def index
@@ -11,7 +11,8 @@ class EventsController < OpenReadController
 
   # GET /events/1
   def show
-    render json: @event
+    render json:
+    Event.find(params[:id])
   end
 
   # POST /events

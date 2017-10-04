@@ -71,7 +71,6 @@ class UsersController < ProtectedController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      head :no_content
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -105,5 +104,5 @@ class UsersController < ProtectedController
                                  :interests)
   end
 
-  private :user_creds, :pw_creds
+  private :user_creds, :pw_creds, :user_params
 end

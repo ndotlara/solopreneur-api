@@ -8,7 +8,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=$TOKEN" \
   --header "Content-Type: application/json" \
   --data '{
-    "users": {
+    "user": {
       "first_name": "'"${FIRST}"'",
       "last_name": "'"${LAST}"'",
       "company": "'"${CO}"'",

@@ -8,7 +8,7 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
-    "comments": {
+    "comment": {
       "comment_body": "'"${COMMENT_BODY}"'",
       "user_id": "'"${USER_ID}"'",
       "event_id": "'"${EVENT_ID}"'"
