@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class EventsController < OpenReadController
   before_action :set_event, only: [:show, :update, :destroy]
 
