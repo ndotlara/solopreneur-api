@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-class EventsController < UsersController
+class EventsController < OpenReadController
   before_action :set_event, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:create]
 
   # GET /events
   def index
@@ -19,6 +20,7 @@ class EventsController < UsersController
     @event = Event.new(event_params)
 
     if @event.save
+binding.pry
       render json: @event, status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity
@@ -45,8 +47,12 @@ class EventsController < UsersController
       @event = Event.find(params[:id])
     end
 
+    def set_user
+      @user = User.find(params[:id])
+    end
+
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:event_name, :date, :time, :street_address, :city, :state, :zip_code, :description)
+      params.require(:event).permit(:event_name, :date, :time, :street_address, :city, :state, :zip_code, :description, :user_id)
     end
 end
