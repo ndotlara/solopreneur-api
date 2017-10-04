@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class EventsController < OpenReadController
   before_action :set_event, only: [:show, :update, :destroy]
-  before_action :set_user, only: [:create]
 
   # GET /events
   def index
@@ -17,10 +16,9 @@ class EventsController < OpenReadController
 
   # POST /events
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
 
     if @event.save
-binding.pry
       render json: @event, status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity
@@ -44,11 +42,8 @@ binding.pry
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
-    end
+      @event = current_user.events.find(params[:id])
 
-    def set_user
-      @user = User.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

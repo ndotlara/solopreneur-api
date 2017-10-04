@@ -56,21 +56,22 @@ class UsersController < ProtectedController
     render json: @user
   end
 
-  # POST /users
-  # POST /users.json
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      render json: @user, status: :created, location: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
-  end
+  # # POST /users
+  # # POST /users.json
+  # def create
+  #   @user = User.new(user_params)
+  #
+  #   if @user.save
+  #     render json: @user, status: :created, location: @user
+  #   else
+  #     render json: @user.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
+      head :no_content
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity

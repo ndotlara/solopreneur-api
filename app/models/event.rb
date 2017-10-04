@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
-  include Authentication
-  belongs_to :users
+  belongs_to :user
   has_many :comments
 
   # validates_presence_of :event_name, :date, :time, :street_address, :city, :state, :zip_code, :description
